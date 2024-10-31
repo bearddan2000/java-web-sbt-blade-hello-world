@@ -1,4 +1,4 @@
-# java-web-maven-blade-hello-world
+# java-web-sbt-blade-hello-world
 
 ## Description
 A POC for blade framework rendering html page.
@@ -7,7 +7,7 @@ A POC for blade framework rendering html page.
 - cors
 
 ## Docker stack
-- maven:3-openjdk-17
+- hseeberger/scala-sbt:11.0.2-oraclelinux7_1.3.5_2.12.10
 
 ## To run
 `sudo ./install.sh -u`

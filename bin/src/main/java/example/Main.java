@@ -14,17 +14,6 @@ public class Main {
         Blade.of()
             .get("/", ctx -> ctx.render("index.html"))
             .enableCors(true)
-            .before("/user/*", ctx -> log.info("[NarrowedHook] Before '/user/*', URL called: " + ctx.uri()))
-            .on(EventType.SERVER_STARTED, e -> {
-                String version = WebContext.blade()
-                    .env("app.version")
-                    .orElse("N/D");
-                log.info("[Event::serverStarted] Loading 'app.version' from configuration, value: " + version);
-            })
-            .on(EventType.SESSION_CREATED, e -> {
-                Session session = (Session) e.attribute("session");
-                session.attribute("mySessionValue", "Baeldung");
-            })
             .start(Main.class, args);
     }
 }
